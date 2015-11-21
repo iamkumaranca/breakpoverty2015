@@ -1,5 +1,5 @@
 <?php
-require('./inc/php/TextMagicAPI.php');
+require('./inc/php/tm/TextMagicAPI.php');
 
 $api = new TextMagicAPI(array(
     "username" => "krizanthonymayo",
