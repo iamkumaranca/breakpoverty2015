@@ -13,7 +13,7 @@
 
         <h1>Welcome to the SMS Translator</h1>
 
-        <div id="sourceText">Hello world, We are testing SMS Translation!</div>
+        <div id="sourceText">Hello world, we are testing SMS Translation!</div>
         <div id="translation"></div>
         <script>
             function translateText(response) {
