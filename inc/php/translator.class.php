@@ -74,7 +74,7 @@ class Traslator_API {
                 },
                 success: function( data )
                 {
-                  //data is whatever your PHP script returns
+                  alert(\'success\');
                 },
                 error: function(xhr) {
                   console.log(data);
