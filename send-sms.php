@@ -1,6 +1,6 @@
 <?php
 
-require_once('./inc/php/Twilio.php');
+require "/inc/php/Twilio.php";
 
 // set your AccountSid and AuthToken from www.twilio.com/user/account
 $AccountSid = "ACa05f6964ee72c4484248d314229a6cc7";
@@ -10,7 +10,7 @@ $client = new Services_Twilio($AccountSid, $AuthToken);
 
 $message = $client->account->messages->create(array(
     "From" => "647-691-0478",
-    "To" => "647-677-2556",
+    "To" => "647-669-5304",
     "Body" => "Test message!",
 ));
 
