@@ -1,3 +1,12 @@
+<?php
+header("content-type: text/xml");
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+$body = $_REQUEST['Body'];
+?>
+<Response>
+	<Message><? echo $body; ?> RESEND</Message>
+</Response>
+
 <html class="no-js" lang="en-ca">
     <head>
         <meta charset="utf-8">
@@ -67,17 +76,8 @@
         }
 
         function send_translation(translated_word) {
-            $translation = translated_word.data.translation[0][0].translatedText;
+            var $translation = translated_word.data.translation[0][0].translatedText;
         }
         </script>
     </body>
 </html>
-
-<?php
-header("content-type: text/xml");
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-$body = $_REQUEST['Body'];
-?>
-<Response>
-	<Message><? echo $body; ?> RESEND</Message>
-</Response>
