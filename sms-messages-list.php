@@ -9,7 +9,7 @@ $client = new Services_Twilio($sid, $token);
 
 // Loop over the list of smss and echo a property for each one
 foreach ($client->account->sms_messages as $sms) {
-    echo $sms->to . ' ' . $sms->DateSent . '<br />';
+    echo $sms->from . ' ' . $sms->datesent . '<br />';
     echo $sms->body . '<br /><br />';
 }
 ?>
