@@ -2,8 +2,12 @@
 header("content-type: text/xml");
 echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 $body = $_REQUEST['Body'];
+?>
+<Response>
+	<Message><? echo $body; ?> RESEND</Message>
+</Response>
 
-echo '<!doctype html>
+<!doctype html>
 <html class="no-js" lang="en-ca">
     <head>
         <meta charset="utf-8">
@@ -11,7 +15,7 @@ echo '<!doctype html>
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script>window.jQuery || document.write(\'<script src="./inc/js/jquery-2.1.4.min.js"><\/script>\')</script>
+        <script>window.jQuery || document.write('<script src="./inc/js/jquery-2.1.4.min.js"><\/script>')</script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -25,10 +29,12 @@ echo '<!doctype html>
 
         <script>
         $.ajax({
-            url: \'https://www.googleapis.com/language/translate/v2/detect?q=' . $body . '&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8\',
-            dataType: \'json\',
-            type: \'GET\',
+            url: 'https://www.googleapis.com/language/translate/v2/detect?q=' + <?php echo $body ?> + '&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+            dataType: 'json',
+            type: 'GET',
             success: function(data) {
+                //console.log(data.data.detections[0][0].language);
+                console.log(data);
                 translate_string(data);
             },
             error: function(data){
@@ -41,10 +47,12 @@ echo '<!doctype html>
 
             if ("en" == language) {
                 $.ajax({
-                    url: \'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=' . $body . '&source=en&target=sw\',
-                    dataType: \'json\',
-                    type: \'GET\',
+                    url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=' + <?php echo $body ?> + '&source=en&target=sw',
+                    dataType: 'json',
+                    type: 'GET',
                     success: function(data) {
+                        //console.log('english');
+                        //console.log(data);
                         send_translation(data);
                     },
                     error: function(data){
@@ -53,10 +61,12 @@ echo '<!doctype html>
                 });
             } else {
                 $.ajax({
-                    url: \'https://www.googleapis.com/language/translate/v2?q=' . $body . '&target=en&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8\',
-                    dataType: \'json\',
-                    type: \'GET\',
+                    url: 'https://www.googleapis.com/language/translate/v2?q=' + <?php echo $body ?> + '&target=en&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    dataType: 'json',
+                    type: 'GET',
                     success: function(data) {
+                        //console.log('sw');
+                        //console.log(data);
                         send_translation(data);
                     },
                     error: function(data){
@@ -71,9 +81,4 @@ echo '<!doctype html>
         }
         </script>
     </body>
-</html>';
-
-?>
-<Response>
-	<Message><? echo $body; ?> RESEND</Message>
-</Response>
+</html>
