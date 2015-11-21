@@ -8,8 +8,8 @@ $token = "00e53c85bd5e7108ee44b580274fc4cc";
 $client = new Services_Twilio($sid, $token);
 
 // Loop over the list of smss and echo a property for each one
-foreach ($client->account->incomingphonenumbers as $sms) {
-    echo $sms->phonenumber . '<br /><br />';
+foreach ($client->account->incoming_phone_numbers as $sms) {
+    echo $sms->phone_number . '<br /><br />';
     //echo $sms->body . '<br /><br />';
 }
 
