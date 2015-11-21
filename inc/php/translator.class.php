@@ -12,9 +12,9 @@ class Traslator_API {
 		$this->input = $input;
 	}
 
-    function getOutput() {
-        translateInput();
-    }
+    // function getOutput() {
+    //     $this->translateInput();
+    // }
 
     function translateInput() {
         echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
