@@ -20,7 +20,7 @@ class Traslator_API {
     }
 
     function getOutput() {
-        return $this->output;
+        echo $this->output;
     }
 
     function translateInput() {
