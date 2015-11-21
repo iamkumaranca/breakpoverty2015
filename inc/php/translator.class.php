@@ -20,7 +20,8 @@ class Traslator_API {
     }
 
     function translateInput() {
-        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=' . rawurlencode($this->input) . '&key=' . $this->apiKey;
+        //'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
+        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
         $handle = curl_init($languageDetect);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
