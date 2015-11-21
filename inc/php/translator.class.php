@@ -74,7 +74,7 @@ class Traslator_API {
 
         function send_translation(translated_word) {
             var translation = translated_word.data.translation[0][0].translatedText;
-            $(\'body\').html(translation);
+            $( "body" ).append(translation);
             //console.log(translation);
             // $.ajax({
             //     url: \'translator.class.php\',
