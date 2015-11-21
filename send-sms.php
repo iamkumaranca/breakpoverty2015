@@ -16,3 +16,4 @@ $message = $client->account->messages->create(array(
 
 // Display a confirmation message on the screen
 echo "Sent message {$message->sid}";
+?>
