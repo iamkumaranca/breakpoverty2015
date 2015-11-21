@@ -26,7 +26,9 @@
             var sourceText = escape(document.getElementById("sourceText").innerHTML);
             //var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&source=en&target=de&callback=translateText&q=' + sourceText;
             var source = 'https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=' + sourceText;
-            newScript.src = source;
+            //newScript.src = source;
+
+            console.log(source);
 
             // When we add this script to the head, the request is sent off.
             document.getElementsByTagName('head')[0].appendChild(newScript);
