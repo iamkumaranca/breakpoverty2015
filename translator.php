@@ -1,3 +1,24 @@
+<?php
+// Get the PHP helper library from twilio.com/docs/php/install
+require('./inc/php/Twilio.php'); // Loads the library
+
+// Your Account Sid and Auth Token from twilio.com/user/account
+$sid = "ACa05f6964ee72c4484248d314229a6cc7";
+$token = "00e53c85bd5e7108ee44b580274fc4cc";
+$client = new Services_Twilio($sid, $token);
+
+// Loop over the list of smss and echo a property for each one
+foreach ($client->account->sms_messages as $sms) {
+    echo $sms->from . ' ' . $sms->date_sent . '<br />';
+    echo $sms->body . '<br /><br />';
+}
+
+$word = end($client->account->sms_messages);
+echo $word;
+?>
+
+
+
 <!doctype html>
 <html class="no-js" lang="en-ca">
     <head>
@@ -48,9 +69,20 @@
                         console.log(data);
                     }
                 });
+            } else {
+                $.ajax({
+                    url: 'https://www.googleapis.com/language/translate/v2?q=hello&target=de&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                });
             }
         }
         </script>
-
     </body>
 </html>
