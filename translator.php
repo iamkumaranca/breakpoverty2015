@@ -79,7 +79,7 @@ $body = $_REQUEST['Body'];
         function send_translation(translated_word) {
             $translation = translated_word.data.translation[0][0].translatedText;
             <Response>
-            	<Message><?php echo $body; ?> RESEND</Message>
+            	<Message>$translation</Message>
             </Response>
         }
         </script>
