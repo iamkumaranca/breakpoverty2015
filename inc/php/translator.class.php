@@ -3,6 +3,7 @@
 if ( $_GET ) {
     //echo $_POST[ 'output' ];  // this is what you passed from jQuery
     Traslator_API::setOutput($_POST[ 'output' ]);
+    echo 'here';
 }
 
 class Traslator_API {
@@ -12,6 +13,7 @@ class Traslator_API {
 
     function __construct( $input ) {
 		$this->input = $input;
+        echo 'contruct';
         $this->translateInput();
 	}
 
