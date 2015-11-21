@@ -2,20 +2,38 @@
 
 class Traslator_API {
 
-    private $input;
-    private $output;
+    // private $input;
+    // private $output;
 
     function __construct( $input ) {
 		$this->input = $input;
 	}
 
-    public function setOutput($output, $input) {
-        $this->$output = $input;
-        return $this;
+    // public function setOutput($output, $input) {
+    //     $this->$output = $input;
+    //     return $this;
+    // }
+    //
+    // public function getOutput() {
+    //     return $this->output;
+    // }
+
+
+
+    private $input;
+    private $output;
+
+    public function getOutput($input) {
+        if (property_exists($this, $input)) {
+            return $this->$input;
+        }
     }
 
-    public function getOutput() {
-        return $this->output;
+    public function setOutput($input, $output) {
+        if (property_exists($this, $input)) {
+            $this->$input = $output;
+        }
+        return $this;
     }
 
     // function translateInput() {
