@@ -1,6 +1,8 @@
 <?php
-if ( $_POST ) {
-    echo $_POST[ 'output' ];  // this is what you passed from jQuery
+
+if ( $_GET ) {
+    //echo $_POST[ 'output' ];  // this is what you passed from jQuery
+    Traslator_API::setOutput($_POST[ 'output' ]);
 }
 
 class Traslator_API {
@@ -10,11 +12,16 @@ class Traslator_API {
 
     function __construct( $input ) {
 		$this->input = $input;
+        $this->translateInput();
 	}
 
-    // function getOutput() {
-    //     $this->translateInput();
-    // }
+    static function setOutput( $output ) {
+        $this->output = $output;
+    }
+
+    function getOutput() {
+        return $this->output;
+    }
 
     function translateInput() {
         echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
@@ -69,7 +76,7 @@ class Traslator_API {
             console.log(translation);
             $.ajax({
                 url: \'translator.class.php\',
-                type: \'POST\',
+                type: \'GET\',
                 data: {
                     output: translation
                 },
