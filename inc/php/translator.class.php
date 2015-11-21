@@ -3,14 +3,14 @@
 class Traslator_API {
 
     private $input;
-    private $output = 'hello';
+    private $output;
 
     function __construct( $input ) {
 		$this->input = $input;
 	}
 
-    function setOutput() {
-        $this->output = $this->input;
+    function setOutput($input) {
+        $this->output = $input;
     }
 
     function getOutput() {
