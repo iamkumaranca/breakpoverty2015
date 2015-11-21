@@ -35,7 +35,7 @@ $client = new Services_Twilio($AccountSid, $AuthToken);
         // Display a confirmation message on the screen
         echo "Sent message to $name";
 
-
+    }
 // Display a confirmation message on the screen
 echo "Sent message {$message->sid}";
 ?>
