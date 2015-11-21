@@ -16,5 +16,5 @@ $client = new Services_Twilio($sid, $token);
   $senderPhoneNumber = $client->account->sms_messages->from;
   $senderMessage = $client->account->sms_messages->body;
 
-  echo $senderPhoneNumber . ' ' . $senderMessage . ' ' <br /><br />;
+  echo $senderPhoneNumber . ' ' . $senderMessage . '<br /><br />'';
 ?>
