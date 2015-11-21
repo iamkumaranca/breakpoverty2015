@@ -1,6 +1,6 @@
 <?php
 
-    $body = "'HELLO'";
+    $body = "'hodi'";
 
 ?>
 
