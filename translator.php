@@ -57,7 +57,7 @@
                 });
             } else {
                 $.ajax({
-                    url: 'https://www.googleapis.com/language/translate/v2?q=' + <?php echo $body ?> + '&target=de&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    url: 'https://www.googleapis.com/language/translate/v2?q=' + <?php echo $body ?> + '&target=en&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
