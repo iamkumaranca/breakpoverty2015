@@ -7,13 +7,15 @@ $sid = "ACa05f6964ee72c4484248d314229a6cc7";
 $token = "00e53c85bd5e7108ee44b580274fc4cc";
 $client = new Services_Twilio($sid, $token);
 
-// Loop over the list of smss and echo a property for each one
+//Loop over the list of smss and echo a property for each one
 // foreach ($client->account->sms_messages as $sms) {
 //     echo $sms->from . ' ' . $sms->date_sent . '<br />';
 //     echo $sms->body . '<br /><br />';
 // }
 
+echo '<pre>';
 print_r($client->account->sms_messages);
+echo '</pre>';
 
 ?>
 
