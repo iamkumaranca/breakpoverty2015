@@ -10,6 +10,7 @@ class Traslator_API {
 	}
 
     function getOutput() {
+        translateInput();
         if ( $_POST ) {
             return $_POST[ 'output' ];  // this is what you passed from jQuery
         }
