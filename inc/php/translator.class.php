@@ -28,7 +28,7 @@ class Traslator_API {
         curl_close($handle);
 
         echo 'Source: ' . $this->input . '<br>';
-        echo 'Translation: ' . $responseDecoded['data']['translations'][0]['translatedText'];
+        echo 'Language: ' . $responseDecoded['data']['data'][0][0]['language'];
 
     }
 
