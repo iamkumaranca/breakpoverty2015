@@ -25,7 +25,7 @@ class Traslator_API {
     }
 
     function translateInput() {
-        echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
+        echo '<html><head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
 
         echo '<script>
         $.ajax({
@@ -74,22 +74,23 @@ class Traslator_API {
 
         function send_translation(translated_word) {
             var translation = translated_word.data.translation[0][0].translatedText;
-            console.log(translation);
-            $.ajax({
-                url: \'translator.class.php\',
-                type: \'GET\',
-                data: {
-                    output: translation
-                },
-                success: function( data )
-                {
-                  alert(\'success\');
-                },
-                error: function(xhr) {
-                  console.log(data);
-                }
-            });
-        }';
+            $(\'body\').html(translation);
+            //console.log(translation);
+            // $.ajax({
+            //     url: \'translator.class.php\',
+            //     type: \'GET\',
+            //     data: {
+            //         output: translation
+            //     },
+            //     success: function( data )
+            //     {
+            //       alert(\'success\');
+            //     },
+            //     error: function(xhr) {
+            //       console.log(data);
+            //     }
+            // });
+        }</head><body></body></html>';
     }
 
  }
