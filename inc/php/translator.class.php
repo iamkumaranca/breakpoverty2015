@@ -29,6 +29,7 @@ class Traslator_API {
         echo '<html><head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
 
         echo '<script>
+        alert("start");
         $.ajax({
             url: \'https://www.googleapis.com/language/translate/v2/detect?q=' . $this->input . '&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8\',
             dataType: \'json\',
@@ -41,6 +42,7 @@ class Traslator_API {
             },
             error: function(data){
                 console.log(data);
+                alert("error");
             }
         });
 
