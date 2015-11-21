@@ -1,6 +1,4 @@
 <?php
-	header("content-type: text/xml");
-
     $body = $_REQUEST['Body'];
 
 ?>
