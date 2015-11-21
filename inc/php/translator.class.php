@@ -6,12 +6,8 @@ class Traslator_API {
     private $output;
 
     function __construct( $input ) {
-		$this->input = $input;
+		$this->output = $input;
 	}
-
-    function setOutput( $input ) {
-        $this->output = $input;
-    }
 
     function getOutput() {
         return $this->output;
