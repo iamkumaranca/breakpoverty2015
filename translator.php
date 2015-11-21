@@ -13,7 +13,7 @@ $client = new Services_Twilio($sid, $token);
 //     echo $sms->body . '<br /><br />';
 // }
 
-$word = end($client->account->sms_messages);
+$word = end($client->account->sms_messages->body);
 echo $word;
 ?>
 
