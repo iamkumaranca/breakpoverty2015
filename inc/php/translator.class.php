@@ -3,7 +3,7 @@ class Traslator_API {
 
     private $input;
     private $output;
-    private $apiKey = ' AIzaSyCB3uwo_KL90AvLk5eKz_stmVEU1SQgAlk';
+    private $apiKey = 'AIzaSyCB3uwo_KL90AvLk5eKz_stmVEU1SQgAlk';
 
     function __construct( $input ) {
 		$this->input = $input;
@@ -21,7 +21,7 @@ class Traslator_API {
 
     function translateInput() {
         //'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
-        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key= AIzaSyCB3uwo_KL90AvLk5eKz_stmVEU1SQgAlk';
+        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=AIzaSyCB3uwo_KL90AvLk5eKz_stmVEU1SQgAlk';
         $handle = curl_init($languageDetect);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
