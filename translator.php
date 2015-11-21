@@ -1,5 +1,6 @@
 <?php
-    $body = $_REQUEST['Body'];
+
+    $body = 'HELLO';
 
 ?>
 
