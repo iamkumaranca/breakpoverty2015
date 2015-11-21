@@ -20,16 +20,35 @@
 
         <script>
         $.ajax({
-            url: 'https://www.googleapis.com/language/translate/v2/detect?q=hallo&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+            url: 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
             dataType: 'json',
             type: 'GET',
             success: function(data) {
-                console.log(data.data.detections[0][0].language);
+                //console.log(data.data.detections[0][0].language);
+                translate_string();
             },
             error: function(data){
                 console.log(data);
             }
         });
+
+        function translate_string(data) {
+            var language = data.data.detections[0][0].language;
+
+            if ("en" == language) {
+                $.ajax({
+                    url: 'https://www.googleapis.com/language/translate/v2?q=hello&source=en&target=dekey=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(data) {
+                        console.log(data);
+                    },
+                    error: function(data){
+                        console.log(data);
+                    }
+                });
+            }
+        }
         </script>
 
     </body>
