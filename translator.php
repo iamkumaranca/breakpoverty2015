@@ -13,10 +13,8 @@ $client = new Services_Twilio($sid, $token);
 //     echo $sms->body . '<br /><br />';
 // }
 
-$user = $client->account->sms_messages;
-$translation = end($user->body)
+print_r($client->account->sms_messages);
 
-echo $translation;
 ?>
 
 
