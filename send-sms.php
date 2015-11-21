@@ -10,7 +10,7 @@ $client = new Services_Twilio($AccountSid, $AuthToken);
 
 $message = $client->account->messages->create(array(
     "From" => "647-691-0478",
-    "To" => "647-669-5304",
+    "To" => "647-669-5304, 647-677-2556",
     "Body" => "Test message!",
 ));
 
