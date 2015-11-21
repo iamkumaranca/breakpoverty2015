@@ -27,8 +27,9 @@ class Traslator_API {
         $responseDecoded = json_decode($response, true);
         curl_close($handle);
 
-        echo 'Source: ' . $this->input . '<br>';
-        echo 'Language: ' . $responseDecoded['data']['data'][0][0]['language'];
+        responseDecoded = json_decode($response, JSON_PRETTY_PRINT);
+        //echo 'Source: ' . $this->input . '<br>';
+        //echo 'Language: ' . $responseDecoded['data']['data'][0][0]['language'];
 
     }
 
