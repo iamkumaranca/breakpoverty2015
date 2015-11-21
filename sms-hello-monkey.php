@@ -6,5 +6,5 @@
 
 ?>
 <Response>
-	<Message><? echo $body; ?></Message>
+	<Message><? echo $body; ?> RESEND</Message>
 </Response>
