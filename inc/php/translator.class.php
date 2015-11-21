@@ -16,7 +16,7 @@ class Traslator_API {
 
     function getOutput() {
         //echo $this->output;
-        echo 'hello';
+        //echo 'hello';
     }
 
     function translateInput() {
@@ -30,6 +30,8 @@ class Traslator_API {
         echo '<pre>';
         print_r(json_decode($response, true));
         echo '</pre>';
+
+        echo $languageDetect;
         //echo 'Source: ' . $this->input . '<br>';
         //echo 'Language: ' . $responseDecoded['data']['data'][0][0]['language'];
 
