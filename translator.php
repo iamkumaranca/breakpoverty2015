@@ -25,6 +25,7 @@
             type: 'GET',
             success: function(data) {
                 //console.log(data.data.detections[0][0].language);
+                console.log(detect success);
                 translate_string(data);
             },
             error: function(data){
