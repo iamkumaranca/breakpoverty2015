@@ -8,22 +8,14 @@ $token = "00e53c85bd5e7108ee44b580274fc4cc";
 $client = new Services_Twilio($sid, $token);
 
 //Loop over the list of smss and echo a property for each one
-foreach ($client->account->sms_messages as $sms) {
-    echo $sms->from . ' ' . $sms->date_sent . '<br />';
-    echo $sms->body . '<br /><br />';
-}
+// foreach ($client->account->sms_messages as $sms) {
+//     echo $sms->from . ' ' . $sms->date_sent . '<br />';
+//     echo $sms->body . '<br /><br />';
+// }
 
-$numItems = count($client->account->sms_message);
-$i = 0;
-foreach ($client->account->sms_messages as $sms) {
-    echo $i;
-    $i++;
-  if($i == $numItems -1 ) {
-      echo $sms->from . ' ' . $sms->date_sent . '<br />';
-      echo $sms->body . '<br /><br />';
-  }
+foreach ($client->account as $sms) {
+    echo $sms;
 }
-
 ?>
 
 
