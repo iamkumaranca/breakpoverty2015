@@ -48,6 +48,7 @@
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
+                        console.log('english');
                         console.log(data);
                     },
                     error: function(data){
@@ -60,6 +61,7 @@
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
+                        console.log('sw');
                         console.log(data);
                     },
                     error: function(data){
