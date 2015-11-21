@@ -1,14 +1,12 @@
 <?php
+	header("content-type: text/xml");
+	echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-header("content-type: text/xml");
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-
-$body = $_REQUEST['Body'];
+    $body = $_REQUEST['Body'];
 
 ?>
-
 <Response>
-    <Message>Something</Message>
+	<Message><? echo $body; ?> RESEND</Message>
 </Response>
 
 <!doctype html>
