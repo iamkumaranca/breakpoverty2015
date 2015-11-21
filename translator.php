@@ -24,14 +24,16 @@
             var newScript = document.createElement('script');
             newScript.type = 'text/javascript';
             var sourceText = escape(document.getElementById("sourceText").innerHTML);
-            var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&source=en&target=de&callback=translateText&q=' + sourceText;
+            //var source = 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&source=en&target=de&callback=translateText&q=' + sourceText;
             //var source = 'https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=' + sourceText;
+            var source = 'https://www.googleapis.com/language/translate/v2/detect?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=Google%20Translate%20Rocks';
             newScript.src = source;
 
-            //console.log(source);
+            var jsonsource = JSON.stringify(source);
+            console.log(source);
 
             // When we add this script to the head, the request is sent off.
-            document.getElementsByTagName('head')[0].appendChild(newScript);
+            document.getElementsByTagName('head')[0].appendChild(jsonsource);
         </script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
