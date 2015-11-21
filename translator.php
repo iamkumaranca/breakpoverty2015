@@ -38,7 +38,7 @@
 
             if ("en" == language) {
                 $.ajax({
-                    url: 'https://www.googleapis.com/language/translate/v2?q=hello&source=en&target=de&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&source=en&target=de&q=hello',
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
