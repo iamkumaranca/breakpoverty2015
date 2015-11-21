@@ -1,6 +1,9 @@
 <?php
 
-    $body = "'hallo'";
+header("content-type: text/xml");
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+
+$body = $_REQUEST['Body'];
 
 ?>
 
@@ -48,8 +51,9 @@
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
-                        console.log('english');
-                        console.log(data);
+                        //console.log('english');
+                        //console.log(data);
+                        send_translation(data);
                     },
                     error: function(data){
                         console.log(data);
@@ -61,8 +65,9 @@
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
-                        console.log('sw');
-                        console.log(data);
+                        //console.log('sw');
+                        //console.log(data);
+                        send_translation(data);
                     },
                     error: function(data){
                         console.log(data);
@@ -70,10 +75,13 @@
                 });
             }
         }
+
+        function send_translation(translated_word) {
+            $translation = translated_word.data.translation[0][0].translatedText;
+            <Response>
+            	<Message><?php echo $body; ?> RESEND</Message>
+            </Response>
+        }
         </script>
     </body>
 </html>
-
-<Response>
-	<Message><? echo $body; ?> RESEND</Message>
-</Response>
