@@ -7,6 +7,10 @@ $body = $_REQUEST['Body'];
 
 ?>
 
+<Response>
+    <Message>Something</Message>
+</Response>
+
 <!doctype html>
 <html class="no-js" lang="en-ca">
     <head>
@@ -82,7 +86,3 @@ $body = $_REQUEST['Body'];
         </script>
     </body>
 </html>
-
-<Response>
-    <Message>Something</Message>
-</Response>
