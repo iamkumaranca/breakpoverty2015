@@ -1,24 +1,10 @@
 <?php
-// Get the PHP helper library from twilio.com/docs/php/install
-require('./inc/php/Twilio.php'); // Loads the library
+	header("content-type: text/xml");
+	echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-// Your Account Sid and Auth Token from twilio.com/user/account
-$sid = "ACa05f6964ee72c4484248d314229a6cc7";
-$token = "00e53c85bd5e7108ee44b580274fc4cc";
-$client = new Services_Twilio($sid, $token);
+    $body = $_REQUEST['Body'];
 
-//Loop over the list of smss and echo a property for each one
-// foreach ($client->account->sms_messages as $sms) {
-//     echo $sms->from . ' ' . $sms->date_sent . '<br />';
-//     echo $sms->body . '<br /><br />';
-// }
-
-foreach ($client->account as $sms) {
-    echo $sms;
-}
 ?>
-
-
 
 <!doctype html>
 <html class="no-js" lang="en-ca">
@@ -42,12 +28,12 @@ foreach ($client->account as $sms) {
 
         <script>
         $.ajax({
-            url: 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+            url: 'https://www.googleapis.com/language/translate/v2/detect?q=' + <?php echo $body ?> + '&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
             dataType: 'json',
             type: 'GET',
             success: function(data) {
                 //console.log(data.data.detections[0][0].language);
-                console.log('detect success');
+                console.log(data);
                 translate_string(data);
             },
             error: function(data){
@@ -60,7 +46,7 @@ foreach ($client->account as $sms) {
 
             if ("en" == language) {
                 $.ajax({
-                    url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&source=en&target=sw&q=hello%20world',
+                    url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8&q=' + <?php echo $body ?> + '&source=en&target=sw',
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
@@ -72,7 +58,7 @@ foreach ($client->account as $sms) {
                 });
             } else {
                 $.ajax({
-                    url: 'https://www.googleapis.com/language/translate/v2?q=hello&target=de&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
+                    url: 'https://www.googleapis.com/language/translate/v2?q=' + <?php echo $body ?> + '&target=de&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8',
                     dataType: 'json',
                     type: 'GET',
                     success: function(data) {
@@ -87,3 +73,7 @@ foreach ($client->account as $sms) {
         </script>
     </body>
 </html>
+
+<Response>
+	<Message><? echo $body; ?> RESEND</Message>
+</Response>
