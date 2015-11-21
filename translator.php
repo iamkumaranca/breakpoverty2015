@@ -7,7 +7,7 @@ $body = $_REQUEST['Body'];
 	<Message><? echo $body; ?> RESEND</Message>
 </Response>
 
-<!doctype html>
+
 <html class="no-js" lang="en-ca">
     <head>
         <meta charset="utf-8">
