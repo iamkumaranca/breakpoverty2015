@@ -13,7 +13,6 @@ class Traslator_API {
 
     function __construct( $input ) {
 		$this->input = $input;
-        echo 'contruct';
         $this->translateInput();
 	}
 
@@ -37,6 +36,7 @@ class Traslator_API {
             success: function(data) {
                 //console.log(data.data.detections[0][0].language);
                 console.log(data);
+                alert("language");
                 translate_string(data);
             },
             error: function(data){
