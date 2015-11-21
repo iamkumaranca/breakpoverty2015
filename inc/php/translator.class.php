@@ -2,12 +2,16 @@
 
 class Traslator_API {
 
-    // private $input;
-    // private $output;
+    private $input;
+    private $output;
 
     function __construct( $input ) {
 		$this->input = $input;
 	}
+
+    public function setOutput($input) {
+        return $input;
+    }
 
     // public function setOutput($output, $input) {
     //     $this->$output = $input;
@@ -17,24 +21,6 @@ class Traslator_API {
     // public function getOutput() {
     //     return $this->output;
     // }
-
-
-
-    private $input;
-    private $output;
-
-    public function getOutput($input) {
-        if (property_exists($this, $input)) {
-            return $this->$input;
-        }
-    }
-
-    public function setOutput($input, $output) {
-        if (property_exists($this, $input)) {
-            $this->$input = $output;
-        }
-        return $this;
-    }
 
     // function translateInput() {
     //     echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
