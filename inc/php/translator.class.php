@@ -21,7 +21,7 @@ class Traslator_API {
 
     function translateInput() {
         //'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
-        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
+        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=AIzaSyChfy5ao_OoY9962aJOou2nA2OF5YNAEM8';
         $handle = curl_init($languageDetect);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
