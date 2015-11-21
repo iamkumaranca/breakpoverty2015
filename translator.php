@@ -5,5 +5,5 @@ require ('./inc/php/translator.class.php');
 $translation = new Traslator_API( "hello" );
 ?>
 <Response>
-	<Message><? echo $translation->translateInput(); ?></Message>
+	<Message><? $translation->translateInput(); ?></Message>
 </Response>

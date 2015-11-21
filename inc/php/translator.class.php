@@ -1,6 +1,6 @@
 <?php
 if ( $_POST ) {
-    return $_POST[ 'output' ];  // this is what you passed from jQuery
+    echo $_POST[ 'output' ];  // this is what you passed from jQuery
 }
 
 class Traslator_API {
