@@ -24,7 +24,7 @@
             dataType: 'json',
             type: 'GET',
             success: function(data) {
-                console.log(data.detections);
+                console.log(data.data.detections[0]);
             },
             error: function(data){
                 console.log(data);
