@@ -9,18 +9,13 @@ class Traslator_API {
 		$this->input = $input;
 	}
 
-    public function setOutput($input) {
-        return $input;
+    function setOutput( $input ) {
+        $this->output = $input;
     }
 
-    // public function setOutput($output, $input) {
-    //     $this->$output = $input;
-    //     return $this;
-    // }
-    //
-    // public function getOutput() {
-    //     return $this->output;
-    // }
+    function getOutput() {
+        return $this->output;
+    }
 
     // function translateInput() {
     //     echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>';
