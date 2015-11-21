@@ -13,9 +13,14 @@ $client = new Services_Twilio($sid, $token);
 //     echo $sms->body . '<br /><br />';
 // }
 
-echo '<pre>';
-print_r($client->account->sms_messages);
-echo '</pre>';
+$numItems = count($client->account->sms_message);
+$i = 0;
+foreach($client->account->sms_message as $ksms) {
+  if(++$i === $numItems) {
+      echo $sms->from . ' ' . $sms->date_sent . '<br />';
+      echo $sms->body . '<br /><br />';
+  }
+}
 
 ?>
 
