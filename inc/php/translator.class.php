@@ -3,7 +3,7 @@ class Traslator_API {
 
     private $input;
     private $output;
-    private $apiKey = 'AIzaSyC1PWVzJuKaqc2ub2nf_oti4WEQ956DyUE';
+    //private $apiKey = 'AIzaSyC1PWVzJuKaqc2ub2nf_oti4WEQ956DyUE';
 
     function __construct( $input ) {
 		$this->input = $input;
@@ -20,23 +20,16 @@ class Traslator_API {
     }
 
     function translateInput() {
-        //'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=' . $this->apiKey;
-        $languageDetect = 'https://www.googleapis.com/language/translate/v2/detect?q=hello&key=AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZc';
-        $handle = curl_init($languageDetect);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        $apiKey = 'AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZc';
+        $url = 'https://www.googleapis.com/language/translate/v2/languages?key=' . $apiKey;
+
+        $handle = curl_init($url);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);     //We want the result to be saved into variable, not printed out
         $response = curl_exec($handle);
-        $responseDecoded = json_decode($response, true);
         curl_close($handle);
 
-        echo '<pre>';
         print_r(json_decode($response, true));
-        echo '</pre>';
-
-        echo $languageDetect;
-        //echo 'Source: ' . $this->input . '<br>';
-        //echo 'Language: ' . $responseDecoded['data']['data'][0][0]['language'];
-
-    }
+        }
 
  }
 
