@@ -9,11 +9,12 @@ class Traslator_API {
 		$this->input = $input;
 	}
 
-    function setOutput($input) {
-        $this->output = $input;
+    public function setOutput($output, $input) {
+        $this->$output = $input;
+        return $this;
     }
 
-    function getOutput() {
+    public function getOutput() {
         return $this->output;
     }
 
