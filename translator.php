@@ -17,7 +17,8 @@ $numItems = count($client->account->sms_message);
 $i = 0;
 foreach ($client->account->sms_messages as $sms) {
     echo $i;
-  if(++$i === $numItems) {
+    $i++;
+  if($i === $numItems) {
       echo $sms->from . ' ' . $sms->date_sent . '<br />';
       echo $sms->body . '<br /><br />';
   }
