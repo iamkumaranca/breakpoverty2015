@@ -1,13 +1,3 @@
-<?php
-header("content-type: text/xml");
-echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-$body = $_REQUEST['Body'];
-?>
-<Response>
-	<Message><? echo $body; ?> RESEND</Message>
-</Response>
-
-
 <html class="no-js" lang="en-ca">
     <head>
         <meta charset="utf-8">
@@ -82,3 +72,12 @@ $body = $_REQUEST['Body'];
         </script>
     </body>
 </html>
+
+<?php
+header("content-type: text/xml");
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
+$body = $_REQUEST['Body'];
+?>
+<Response>
+	<Message><? echo $body; ?> RESEND</Message>
+</Response>
