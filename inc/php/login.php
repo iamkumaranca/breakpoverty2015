@@ -9,9 +9,17 @@ $stmt = $dbh->prepare('SELECT `id`, `username`, `password` FROM `user`;');
 $stmt->execute();
 
 while($row = $stmt->fetch()) {
-	print_r($row)."<br/>"; // recursively print out object.
-    echo $row['username']."<br/>";
-    echo $row['password']."<br />";
+	// print_r($row)."<br/>"; // recursively print out object.
+    // echo $row['username']."<br/>";
+    // echo $row['password']."<br />";
+    if( $row['username'] == $username && $row['password'] == $password) {
+        echo 'Access Granted';
+    } else {
+        echo 'Access Denied';
+    }
+
+
+
 	// if($username == $row['username'] && $password = $row['password']) {
 	// 	echo("WELCOME TO OUR HIDDEN PAGE!!! You are now loggged in!");
 	// 	//$_SESSION["logged-in"] = true;
