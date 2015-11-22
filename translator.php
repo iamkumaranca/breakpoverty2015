@@ -21,8 +21,6 @@ if('' != $translated_string) :
     $stmt->execute();
 endif;
 
-
-
 ?>
 <Response>
 	<Message><? echo $body . ' -> ' .  $translated_string ?></Message>
