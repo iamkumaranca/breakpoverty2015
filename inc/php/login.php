@@ -11,8 +11,8 @@ $stmt->execute();
 while($row = $stmt->fetch()) {
     if( $row['username'] == $username && $row['password'] == $password ) {
         $_SESSION["logged-in"] = true;
-        header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
-        die();
+        //header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
+        //die();
     } else {
         //header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
         //die();
