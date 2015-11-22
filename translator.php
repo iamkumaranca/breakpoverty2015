@@ -14,7 +14,7 @@ $body = $_REQUEST['Body'];
 $sent_from = $_REQUEST['From'];
 $sent_to = $_REQUEST['To'];
 $stmt->execute();
-$translation = new Traslator_API( rawurlencode(strtolower($status)) );
+$translation = new Traslator_API( rawurlencode(strtolower($body)) );
 ?>
 <Response>
 	<Message><? echo $translation->translateInput(); ?></Message>
