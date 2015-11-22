@@ -9,7 +9,11 @@ $stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
 $stmt->execute();
 
 $user_count = count($stmt->fetch());
-echo $user_count;
+
+echo '<pre>';
+print_r($stmt->fetch());
+echo '</pre>';
+
 while($row = $stmt->fetch()) {
     // if( $row['username'] == $username && $row['password'] == $password ) :
     //     $_SESSION["logged-in"] = true;
