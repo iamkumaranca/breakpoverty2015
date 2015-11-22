@@ -25,7 +25,7 @@ class Traslator_API {
             echo 'error';
             $error = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
             $error =+ 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
-            return error;
+            return $error;
         else :
             $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
             if ( $detectedLanuage == 'en' ) :
