@@ -3,7 +3,7 @@ class Traslator_API {
 
     private $input;
     private $output;
-    private $apiKey = 'AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZ';
+    private $apiKey = 'AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZc';
 
     function __construct( $input ) {
 		$this->input = $input;
