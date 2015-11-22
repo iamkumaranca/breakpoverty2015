@@ -10,6 +10,8 @@ $stmt->execute();
 
 while($row = $stmt->fetch()) {
 	print_r($row)."<br/>"; // recursively print out object.
+    echo $row['username']."<br/>";
+    echo $row['password']."<br />";
 	// if($username == $row['username'] && $password = $row['password']) {
 	// 	echo("WELCOME TO OUR HIDDEN PAGE!!! You are now loggged in!");
 	// 	//$_SESSION["logged-in"] = true;
