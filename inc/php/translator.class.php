@@ -42,6 +42,18 @@ class Traslator_API {
             //print_r(json_decode($response, true));
             //echo '</pre>';
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
+            //echo $translatedString;
+        else :
+            $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
+            $handle = curl_init($url);
+            curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($handle);
+            $responseDecoded = json_decode($response, true);
+            curl_close($handle);
+            //echo '<pre>';
+            //print_r(json_decode($response, true));
+            //echo '</pre>';
+            $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
             echo $translatedString;
         endif;
     }
