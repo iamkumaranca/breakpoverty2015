@@ -25,7 +25,7 @@ $status = $_REQUEST['status'];
 $direction = $_REQUEST['direction'];
 //$stmt->execute();
 //$translation = new Traslator_API( rawurlencode(strtolower($status)) );
-$translation = new Traslator_API( $status );
+$translation = new Traslator_API( $sent_from );
 ?>
 <Response>
 	<Message><? echo $translation->translateInput(); ?></Message>
