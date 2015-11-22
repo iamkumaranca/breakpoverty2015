@@ -16,9 +16,9 @@ $stmt->bindParam(':direction', $direction);
 
 $body = $_REQUEST['Body'];
 $date_sent = $_REQUEST['Date_Sent'];
-$old_date = date('D, d M Y H:i:s O');
-$old_date_timestamp = strtotime($old_date);
-$date_sent = date(YY-MM-DD hh:mm:ss);
+//$old_date = date('D, d M Y H:i:s O');
+//$old_date_timestamp = strtotime($old_date);
+//$date_sent = date(YY-MM-DD hh:mm:ss);
 $sent_from = $_REQUEST['From'];
 $sent_to = $_REQUEST['To'];
 $status = $_REQUEST['Status'];
