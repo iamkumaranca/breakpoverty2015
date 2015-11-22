@@ -21,19 +21,29 @@ class Traslator_API {
 
     function translateInput() {
         $url = 'https://www.googleapis.com/language/translate/v2/detect?q=' . $this->input .'&key=' . $this->apiKey;
-
         $handle = curl_init($url);
-        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);     //We want the result to be saved into variable, not printed out
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
         $responseDecoded = json_decode($response, true);
         curl_close($handle);
-        echo '<pre>';
-        print_r(json_decode($response, true));
-        echo '</pre>';
+        //echo '<pre>';
+        //print_r(json_decode($response, true));
+        //echo '</pre>';
+        $detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
 
-        echo 'Source: ' . $this->input . '<br>';
-        echo 'Translation: ' . $responseDecoded['data']['detections'][0][0]['language'];
-        }
+        if ( 'en' == $detectedLanuage ) :
+            $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
+            $handle = curl_init($url);
+            curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($handle);
+            $responseDecoded = json_decode($response, true);
+            curl_close($handle);
+            echo '<pre>';
+            print_r(json_decode($response, true));
+            echo '</pre>';
+            //$detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
+        endif;
+    }
 
  }
 
