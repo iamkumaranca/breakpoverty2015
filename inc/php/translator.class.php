@@ -28,6 +28,7 @@ class Traslator_API {
             return $errorCode . ' ' .  $errorDescription;
         else :
             $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
+            echo $detectedLanuage;
             if ( $detectedLanuage == 'en' ) :
                 echo 'success en';
                 $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
