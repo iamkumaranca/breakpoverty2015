@@ -43,7 +43,7 @@ class Traslator_API {
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;*/
-                $this->googleAPICall( $url );
+                googleAPICall( $url );
             else:
                 /*$url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
                 $handle = curl_init($url);
@@ -61,13 +61,13 @@ class Traslator_API {
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;*/
                 $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
-                $this->googleAPICall( $url );
+                googleAPICall( $url );
             endif;
         endif;
     }
 
     function googleAPICall( $url ) {
-        $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
+        //$url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
