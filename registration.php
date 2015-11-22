@@ -20,7 +20,7 @@ if($_SESSION["logged-in"]) :
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <form role="form">
+                                <form role="form" action="./inc/php/register.php" method="post">
                                     <div class="col-lg-12">
                                         <div class="col-lg-6">
                                             <div class="form-group">
