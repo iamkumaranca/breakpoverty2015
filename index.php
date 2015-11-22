@@ -1,4 +1,5 @@
 <?php
+session_start();
 if($_SESSION["logged-in"]) :
     include_once('./inc/php/header.php'); ?>
 
