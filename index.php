@@ -49,7 +49,7 @@ if($_SESSION["logged-in"]) :
                     <div class="col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <i class="fa fa-bell fa-fw"></i> Most Popular Requests
+                                <i class="fa fa-line-chart fa-fw"></i> Top 10 Popular Requests
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
