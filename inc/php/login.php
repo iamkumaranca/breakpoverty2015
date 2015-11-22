@@ -17,6 +17,8 @@ while($row = $stmt->fetch()) {
     //     die();
     // endif;
     echo 'before: ' . $user_count;
+    echo '<br />';
+    echo $row['username'];
     $user_count--;
     echo '<br />';
     echo 'after: ' . $user_count;
