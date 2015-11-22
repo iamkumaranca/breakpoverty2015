@@ -58,8 +58,7 @@ if($_SESSION["logged-in"]) :
                                 <?php
                                 while($row = $stmt2->fetch()) {
                                     echo '<div class="list-group">';
-                                        echo '<p class="list-group-item">' . $row['message'] . '</p>';
-                                        echo '<span class="badge">' . $row['total'] . '</span>';
+                                        echo '<p class="list-group-item">' . $row['message'] . '<span class="badge">' . $row['total'] . '</span></p>';
                                     echo '</div>';
                                 }
                                 ?>
