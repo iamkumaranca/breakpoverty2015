@@ -5,7 +5,7 @@ if($_SESSION["logged-in"]) :
     include_once('./inc/php/navigation.php');?>
 
             <div id="page-wrapper">
-                <div class="row">
+                <div class="row"><br />
                     <div class="col-lg-8">
                         <!-- /.panel -->
                         <div class="panel panel-default">
