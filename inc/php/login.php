@@ -19,8 +19,8 @@ while($row = $stmt->fetch()) {
 
         echo 'db password: ' . $row['password'] . '<br />';
         echo 'user password: ' . $password . '<br />';
-        echo 'db username: ' . $username . '<br />';
-        echo 'user username: ' . $row['username'] . '<br /><br /><br /><br /><br /><br />';
+        echo 'db username: ' . $row['username']. '<br />';
+        echo 'user username: ' . $username . '<br /><br /><br /><br /><br /><br />';
 
     }
 }
