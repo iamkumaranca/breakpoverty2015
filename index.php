@@ -7,7 +7,7 @@ if($_SESSION["logged-in"]) :
     $stmt = $dbh->prepare('SELECT * FROM `sms`;');
     $stmt->execute();
 
-    $stmt2 = $dbh->prepare('SELECT message FROM top_translation_view LIMIT 10;');
+    $stmt2 = $dbh->prepare('SELECT message, total FROM top_translation_view LIMIT 10;');
     $stmt2->execute();
 ?>
             <div id="page-wrapper">
@@ -59,6 +59,7 @@ if($_SESSION["logged-in"]) :
                                 while($row = $stmt2->fetch()) {
                                     echo '<div class="list-group">';
                                         echo '<p class="list-group-item">' . $row['message'] . '</p>';
+                                        echo '<span class="badge">' . $row['total'] . '</span>';
                                     echo '</div>';
                                 }
                                 ?>
