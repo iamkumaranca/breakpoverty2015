@@ -5,7 +5,7 @@ const DEFAULT_URL = 'https://breakingpoverty2015.firebaseio.com/';
 const DEFAULT_TOKEN = '98qyOIK3yGRdGfwICYqfMooqf74gwFYGaxMrGUGh';
 const DEFAULT_PATH = '/firebase/example';
 
-$firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
+$firebase = new FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
 
 // --- storing an array ---
 $test = array(
