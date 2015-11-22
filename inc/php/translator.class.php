@@ -3,7 +3,7 @@ class Traslator_API {
 
     private $input;
     private $output;
-    private $apiKey = 'AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZc';
+    private $apiKey = 'AIzaSyAww6xe_uCN25DTo84zsMyXlFsLGwkopZ';
 
     function __construct( $input ) {
 		$this->input = $input;
@@ -20,7 +20,13 @@ class Traslator_API {
         $response = curl_exec($handle);
         $responseDecoded = json_decode($response, true);
         curl_close($handle);
-        $detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
+
+        if($responseCode != 200) :
+            $error = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
+            $error =. 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+        else :
+            $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
+        endif;
 
         if ( $detectedLanuage == 'en' ) :
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
@@ -30,7 +36,8 @@ class Traslator_API {
             $responseDecoded = json_decode($response, true);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-        else :
+            return  rawurldecode($this->input) . ' -> ' . $translatedString;
+        elseif ( strlen($detectedLanuage) == 2 ) :
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -38,8 +45,10 @@ class Traslator_API {
             $responseDecoded = json_decode($response, true);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
+            return  rawurldecode($this->input) . ' -> ' . $translatedString;
+        else :
+            return $error;
         endif;
-        return  rawurldecode($this->input) . ' -> ' . $translatedString;
     }
  }
 
