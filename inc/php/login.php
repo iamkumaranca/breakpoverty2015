@@ -8,15 +8,18 @@ $password = hash('sha512', $_POST["password"]);
 $stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
 $stmt->execute();
 
+$user_count = end($row);
+
 while($row = $stmt->fetch()) {
-    if( $row['username'] == $username && $row['password'] == $password ) {
+    if( $row['username'] == $username && $row['password'] == $password ) :
         $_SESSION["logged-in"] = true;
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
-    }
-    // } else {
-    //     //header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
-    //     //die();
-    // }
+    endif;
+    $user_count--;
+    if ($user_count == 0) :
+        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
+        die();
+    endif;
 }
 ?>
