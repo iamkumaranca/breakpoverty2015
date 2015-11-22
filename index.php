@@ -7,10 +7,9 @@ if($_SESSION["logged-in"]) :
     $stmt = $dbh->prepare('SELECT * FROM `sms`;');
     $stmt->execute();
 
-    $stmt2 = $dbh->prepare('CREATE OR REPLACE VIEW AS top_translations_view AS SELECT message, COUNT(message) AS total FROM sms GROUP BY message ORDER BY total DESC; SELECT message FROM top_translations_view LIMIT 10;');
+    $stmt2 = $dbh->prepare('SELECT message FROM top_translations_view LIMIT 10;');
     $stmt2->execute();
 ?>
-
             <div id="page-wrapper">
                 <div class="row"><br />
                     <div class="col-lg-8">
@@ -60,7 +59,7 @@ if($_SESSION["logged-in"]) :
                                     <a href="#" class="list-group-item">
                                         <?php
                                             while($row = $stmt2->fetch()) {
-                                                echo '<p>' . $row['message'] . '</p><br/>';
+                                                echo '<p>' . $row['message'] . '</p>';
                                             }
                                         ?>
                                     </a>
