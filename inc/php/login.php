@@ -13,9 +13,10 @@ while($row = $stmt->fetch()) {
         $_SESSION["logged-in"] = true;
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
-    } else {
-        //header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
-        //die();
     }
+    // } else {
+    //     //header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
+    //     //die();
+    // }
 }
 ?>
