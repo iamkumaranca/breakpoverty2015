@@ -10,8 +10,8 @@ $stmt->execute();
 
 while($row = $stmt->fetch()) {
 	// print_r($row)."<br/>"; // recursively print out object.
-    // echo $row['username']."<br/>";
-    // echo $row['password']."<br />";
+    echo $row['username'] . ' ' . $username;
+    echo $row['password']. ' ' . $password;
     if( $row['username'] == $username && $row['password'] == $password) {
         echo 'Access Granted';
     } else {
