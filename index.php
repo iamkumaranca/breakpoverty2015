@@ -55,15 +55,15 @@ if($_SESSION["logged-in"]) :
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item">
-                                        <?php
-                                            while($row = $stmt2->fetch()) {
-                                                echo '<p>' . $row['message'] . '</p>';
-                                            }
-                                        ?>
-                                    </a>
-                                </div>
+                                <?php
+                                while($row = $stmt2->fetch()) {
+                                    echo '<div class="list-group">';
+                                        echo '<a href="#" class="list-group-item">';
+                                            echo '<p>' . $row['message'] . '</p>';
+                                        echo '</a>';
+                                    echo '</div>';
+                                }
+                                ?>
                                 <!-- /.list-group -->
                             </div>
                             <!-- /.panel-body -->
