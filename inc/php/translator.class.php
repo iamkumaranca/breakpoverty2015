@@ -39,7 +39,7 @@ class Traslator_API {
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
         endif;
-        return $translatedString;
+        return  $this->input . '->' . $translatedString;
     }
  }
 
