@@ -29,7 +29,7 @@ class Traslator_API {
         else :
             if ( $detectedLanuage == 'en' ) :
                 $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
-                $handle = curl_init($url);
+                /*$handle = curl_init($url);
                 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($handle);
                 $responseDecoded = json_decode($response, true);
@@ -42,9 +42,10 @@ class Traslator_API {
                     return $errorCode . ' ' .  $errorDescription;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
-                endif;
+                endif;*/
+                $this->googleAPICall( $url );
             else:
-                $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
+                /*$url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
                 $handle = curl_init($url);
                 curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
                 $response = curl_exec($handle);
@@ -58,8 +59,28 @@ class Traslator_API {
                     return $errorCode . ' ' .  $errorDescription;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
-                endif;
+                endif;*/
+                $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
+                $this->googleAPICall( $url );
             endif;
+        endif;
+    }
+
+    function googleAPICall( $url ) {
+        $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
+        $handle = curl_init($url);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($handle);
+        $responseDecoded = json_decode($response, true);
+        $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+        curl_close($handle);
+        $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
+        if($responseCode != 200) :
+            $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
+            $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+            return $errorCode . ' ' .  $errorDescription;
+        else :
+            return  rawurldecode($this->input) . ' -> ' . $translatedString;
         endif;
     }
  }
