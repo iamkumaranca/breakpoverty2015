@@ -23,7 +23,7 @@ class Traslator_API {
         curl_close($handle);
         if($responseCode != 200) :
             $error = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
-            $error =. 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+            $error =+ 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
         else :
             $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
         endif;
