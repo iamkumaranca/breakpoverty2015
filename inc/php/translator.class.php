@@ -31,6 +31,7 @@ class Traslator_API {
         endif;
 
         if ( $detectedLanuage == 'en' ) :
+            echo 'en success';
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -41,6 +42,7 @@ class Traslator_API {
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
             return  rawurldecode($this->input) . ' -> ' . $translatedString;
         elseif ( strlen($detectedLanuage) == 2 ) :
+            echo 'success other';
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -51,6 +53,7 @@ class Traslator_API {
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
             return  rawurldecode($this->input) . ' -> ' . $translatedString;
         else :
+            echo 'fail';
             return $error;
         endif;
     }
