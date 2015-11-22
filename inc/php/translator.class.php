@@ -41,7 +41,7 @@ class Traslator_API {
                     $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
                     return $errorCode . ' ' .  $errorDescription;
                 else :
-                    return  rawurldecode($this->input) . ' -> ' . $translatedString;
+                    return  $translatedString;
                 endif;
             else:
                 $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
@@ -57,7 +57,7 @@ class Traslator_API {
                     $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
                     return $errorCode . ' ' .  $errorDescription;
                 else :
-                    return  rawurldecode($this->input) . ' -> ' . $translatedString;
+                    return  $translatedString;
                 endif;
             endif;
         endif;
