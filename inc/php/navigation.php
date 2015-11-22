@@ -63,10 +63,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="tables.php"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.php"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        <a href="forms.php"><i class="fa fa-user-plus fa-fw"></i> New User Registration</a>
                     </li>
                 </ul>
             </div>

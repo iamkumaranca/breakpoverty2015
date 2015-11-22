@@ -13,7 +13,7 @@ if($_SESSION["logged-in"]) :
                     <div class="col-lg-8">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                Real Time Translation Requests
+                                <i class="fa fa fa-clock-o fa-fw"></i> Real Time Translation Requests
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
