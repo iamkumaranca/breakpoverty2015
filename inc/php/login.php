@@ -5,11 +5,11 @@ session_start();
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-$stmt = $dbh->prepare('SELECT `id`, `username`, `password` FROM `user`;');
+$stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
 $stmt->execute();
 
 while($row = $stmt->fetch()) {
-    if( $row['username'] == $username && hash('sha512', $password)) {
+    if( $row['username'] == $username && $row['password'] == hash('sha512', $password) ) {
         $_SESSION["logged-in"] = true;
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
