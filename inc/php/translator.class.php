@@ -20,9 +20,6 @@ class Traslator_API {
         $response = curl_exec($handle);
         $responseDecoded = json_decode($response, true);
         curl_close($handle);
-        //echo '<pre>';
-        //print_r(json_decode($response, true));
-        //echo '</pre>';
         $detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
 
         if ( $detectedLanuage == 'en' ) :
@@ -32,11 +29,7 @@ class Traslator_API {
             $response = curl_exec($handle);
             $responseDecoded = json_decode($response, true);
             curl_close($handle);
-            //echo '<pre>';
-            //print_r(json_decode($response, true));
-            //echo '</pre>';
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-            //echo $translatedString;
         else :
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
             $handle = curl_init($url);
@@ -44,15 +37,10 @@ class Traslator_API {
             $response = curl_exec($handle);
             $responseDecoded = json_decode($response, true);
             curl_close($handle);
-            //echo '<pre>';
-            //print_r(json_decode($response, true));
-            //echo '</pre>';
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-            //echo $translatedString;
         endif;
         return $translatedString;
     }
-
  }
 
 ?>
