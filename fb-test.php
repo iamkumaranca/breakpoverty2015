@@ -1,8 +1,8 @@
 <?php
 require ('./inc/php/firebaseLib.php');
 
-const DEFAULT_URL = 'https://kidsplace.firebaseio.com/';
-const DEFAULT_TOKEN = 'MqL0c8tKCtheLSYcygYNtGhU8Z2hULOFs9OKPdEp';
+const DEFAULT_URL = 'https://breakingpoverty2015.firebaseio.com/';
+const DEFAULT_TOKEN = '98qyOIK3yGRdGfwICYqfMooqf74gwFYGaxMrGUGh';
 const DEFAULT_PATH = '/firebase/example';
 
 $firebase = new \Firebase\FirebaseLib(DEFAULT_URL, DEFAULT_TOKEN);
