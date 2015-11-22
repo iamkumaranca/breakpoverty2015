@@ -12,7 +12,7 @@ while($row = $stmt->fetch()) {
 	// print_r($row)."<br/>"; // recursively print out object.
     echo $row['username'] . ' ' . $username . '<br />';
     echo $row['password']. ' ' . $password . '<br />';
-    echo password_verify($password, $password['password']);
+
     if( $row['username'] == $username && password_verify($password, $password['password'])) {
         echo 'Access Granted';
     } else {
