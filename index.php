@@ -31,7 +31,7 @@ if($_SESSION["logged-in"]) :
                                             while($row = $stmt->fetch()) {
                                                 echo '<tr>';
                                                 echo '<td>' . $row['sent_from'] . '</td>';
-                                                echo '<td>' . $row['sent_message'] . '</td>';
+                                                echo '<td>' . $row['message'] . '</td>';
                                                 echo '<td>translation goes here</td>';
                                                 echo '</tr>';
                                             }
