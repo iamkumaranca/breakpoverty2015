@@ -32,7 +32,7 @@ if($_SESSION["logged-in"]) :
                                                 echo '<tr>';
                                                 echo '<td>' . $row['sent_from'] . '</td>';
                                                 echo '<td>' . $row['message'] . '</td>';
-                                                echo '<td>translation goes here</td>';
+                                                echo '<td>' . $row['translated'] . '</td>';
                                                 echo '</tr>';
                                             }
                                         ?>
