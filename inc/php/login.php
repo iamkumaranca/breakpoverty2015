@@ -16,10 +16,13 @@ while($row = $stmt->fetch()) {
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
     endif;
+    echo $user_count;
     $user_count--;
-    if ($user_count == 0) :
-        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
-        die();
-    endif;
+    echo '<br />';
+    echo $user_count;
+    // if ($user_count == 0) :
+    //     header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
+    //     die();
+    // endif;
 }
 ?>
