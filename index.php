@@ -58,9 +58,7 @@ if($_SESSION["logged-in"]) :
                                 <?php
                                 while($row = $stmt2->fetch()) {
                                     echo '<div class="list-group">';
-                                        echo '<a href="#" class="list-group-item">';
-                                            echo '<p>' . $row['message'] . '</p>';
-                                        echo '</a>';
+                                        echo '<p class="list-group-item">' . $row['message'] . '</p>';
                                     echo '</div>';
                                 }
                                 ?>
