@@ -27,5 +27,5 @@ $stmt->execute();
 $translation = new Traslator_API( rawurlencode(strtolower($body)) );
 ?>
 <Response>
-	<Message><? echo $translation->translateInput() . ' ' . $date_sent; ?></Message>
+	<Message><? echo $translation->translateInput() . ' ' . $sent_from; ?></Message>
 </Response>
