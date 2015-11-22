@@ -1,8 +1,4 @@
-<?php include_once('./inc/php/connect_db.php');
-
-$passwordHash = password_hash('<br/eak>', PASSWORD_DEFAULT);
-echo $passwordHash;
-?>
+<?php include_once('./inc/php/connect_db.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
