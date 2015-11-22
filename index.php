@@ -7,7 +7,7 @@ if($_SESSION["logged-in"]) :
     $stmt = $dbh->prepare('SELECT * FROM `sms`;');
     $stmt->execute();
 
-    $stmt2 = $dbh->prepare('SELECT message FROM top_translations_view LIMIT 10;');
+    $stmt2 = $dbh->prepare('CREATE OR REPLACE VIEW AS top_translations_view AS SELECT message, COUNT(message) AS total FROM sms GROUP BY message ORDER BY total DESC; SELECT message FROM top_translations_view LIMIT 10;');
     $stmt2->execute();
 ?>
 
