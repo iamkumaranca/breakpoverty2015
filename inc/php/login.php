@@ -14,8 +14,14 @@ while($row = $stmt->fetch()) {
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
     } else {
-        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
-        die();
+        //header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
+        //die();
+
+        echo 'db: ' . $row['db'] . '<br />';
+        echo 'user: ' . $password . '<br />';
+        echo 'db: ' . $username . '<br />';
+        echo 'user: ' . $row['username'] . '<br />';
+
     }
 }
 ?>
