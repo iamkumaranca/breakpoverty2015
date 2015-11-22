@@ -7,7 +7,7 @@ if($_SESSION["logged-in"]) :
     $stmt = $dbh->prepare('SELECT * FROM `sms`;');
     $stmt->execute();
 
-    $stmt2 = $dbh->prepare('SELECT message FROM top_translations_view LIMIT 10;');
+    $stmt2 = $dbh->prepare('SELECT message FROM top_translation_view LIMIT 10;');
     $stmt2->execute();
 ?>
             <div id="page-wrapper">
