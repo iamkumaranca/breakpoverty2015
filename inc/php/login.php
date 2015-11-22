@@ -5,7 +5,7 @@ session_start();
 $username = $_POST["username"];
 $password = hash('sha512', $_POST["password"]);
 
-$stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
+$stmt = $dbh->prepare('SELECT * FROM `user`;');
 $stmt->execute();
 
 $user_count = count($stmt->fetch());
