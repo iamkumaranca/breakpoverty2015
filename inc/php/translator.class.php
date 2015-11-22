@@ -21,7 +21,7 @@ class Traslator_API {
         $responseDecoded = json_decode($response, true);
         $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
-        if($responseCode == 200) :
+        if($responseCode != 200) :
             echo 'error';
             $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
             $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
