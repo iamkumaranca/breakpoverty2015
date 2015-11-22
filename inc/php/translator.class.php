@@ -23,9 +23,9 @@ class Traslator_API {
         curl_close($handle);
         if($responseCode == 200) :
             echo 'error';
-            $error = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
-            $error =+ 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
-            return $error;
+            $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
+            $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+            return $errorCode . ' ' .  $errorDescription;
         else :
             $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
             if ( $detectedLanuage == 'en' ) :
@@ -40,7 +40,9 @@ class Traslator_API {
                 $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
                 if($responseCode != 200) :
                     echo 'error en';
-                    return $error;
+                    $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
+                    $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+                    return $errorCode . ' ' .  $errorDescription;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;
@@ -56,7 +58,9 @@ class Traslator_API {
                 $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
                 if($responseCode != 200) :
                     echo 'error other';
-                    return $error;
+                    $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
+                    $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+                    return $errorCode . ' ' .  $errorDescription;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;
