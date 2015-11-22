@@ -11,7 +11,7 @@ $stmt->execute();
 $user_count = count($stmt->fetch());
 
 echo '<pre>';
-print_r($stmt->fetch());
+print_r($stmt->fetch('username'));
 echo '</pre>';
 
 while($row = $stmt->fetch()) {
