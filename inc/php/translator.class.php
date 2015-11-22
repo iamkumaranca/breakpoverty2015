@@ -19,6 +19,7 @@ class Traslator_API {
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($handle);
         $responseDecoded = json_decode($response, true);
+        $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
 
         if($responseCode != 200) :
@@ -34,6 +35,7 @@ class Traslator_API {
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($handle);
             $responseDecoded = json_decode($response, true);
+            $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
             return  rawurldecode($this->input) . ' -> ' . $translatedString;
@@ -43,6 +45,7 @@ class Traslator_API {
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
             $response = curl_exec($handle);
             $responseDecoded = json_decode($response, true);
+            $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
             return  rawurldecode($this->input) . ' -> ' . $translatedString;
