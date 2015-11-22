@@ -21,13 +21,14 @@ class Traslator_API {
         $responseDecoded = json_decode($response, true);
         $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
+        $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
         if($responseCode != 200) :
             echo 'error';
             $errorCode = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
             $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
             return $errorCode . ' ' .  $errorDescription;
         else :
-            $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
+
             echo $detectedLanuage;
             if ( $detectedLanuage == 'en' ) :
                 echo 'success en';
