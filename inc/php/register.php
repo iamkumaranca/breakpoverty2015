@@ -12,7 +12,7 @@ $site_role = $_POST["site_role"];
 $confirm_password = hash('sha512', $_POST["confirm_password"]);
 
 if($password == $confirm_password) {
-    $stmt = $dbh->prepare("INSERT INTO users VALUES ('', :username, :password, :first_name, :last_name, :email, :mobile_phone, :site_role)");
+    $stmt = $dbh->prepare("INSERT INTO user VALUES ('', :username, :password, :first_name, :last_name, :email, :mobile_phone, :site_role)");
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
     $stmt->bindParam(':first_name', $first_name);
