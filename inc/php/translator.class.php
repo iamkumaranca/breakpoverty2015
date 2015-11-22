@@ -14,6 +14,7 @@ class Traslator_API {
     }
 
     function translateInput() {
+        echo 'here';
         $url = 'https://www.googleapis.com/language/translate/v2/detect?q=' . $this->input .'&key=' . $this->apiKey;
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -67,6 +68,7 @@ class Traslator_API {
     }
 
     private function googleAPICall( $url ) {
+        echo 'in google';
         //$url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
         $handle = curl_init($url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
