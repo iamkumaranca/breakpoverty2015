@@ -4,7 +4,7 @@
 require ('./inc/php/translator.class.php');
 $body = $_REQUEST['Body'];
 //$translation = new Traslator_API( rawurlencode(strtolower($body)) );
-$translation = new Traslator_API( 'hello' );
+$translation = new Traslator_API( 'family' );
 ?>
 <Response>
 	<Message><? echo $translation->translateInput(); ?></Message>

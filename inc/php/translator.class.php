@@ -40,7 +40,7 @@ class Traslator_API {
                 $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
                 if($responseCode != 200) :
                     echo 'error en';
-                    return error;
+                    return $error;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;
@@ -56,7 +56,7 @@ class Traslator_API {
                 $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
                 if($responseCode != 200) :
                     echo 'error other';
-                    return error;
+                    return $error;
                 else :
                     return  rawurldecode($this->input) . ' -> ' . $translatedString;
                 endif;
