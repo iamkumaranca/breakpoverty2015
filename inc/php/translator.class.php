@@ -38,10 +38,11 @@ class Traslator_API {
             $response = curl_exec($handle);
             $responseDecoded = json_decode($response, true);
             curl_close($handle);
-            echo '<pre>';
-            print_r(json_decode($response, true));
-            echo '</pre>';
-            //$detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
+            //echo '<pre>';
+            //print_r(json_decode($response, true));
+            //echo '</pre>';
+            $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
+            echo $translatedString;
         endif;
     }
 
