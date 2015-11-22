@@ -15,7 +15,7 @@ $stmt->bindParam(':status', $status);
 $stmt->bindParam(':direction', $direction);*/
 
 $body = $_REQUEST['Body'];
-/*$date_sent = $_REQUEST['Date_Sent'];
+$date_sent = $_REQUEST['Date_Sent'];
 //$old_date = date('D, d M Y H:i:s O');
 //$old_date_timestamp = strtotime($old_date);
 //$date_sent = date(YY-MM-DD hh:mm:ss);
@@ -23,7 +23,7 @@ $sent_from = $_REQUEST['From'];
 $sent_to = $_REQUEST['To'];
 $status = $_REQUEST['Status'];
 $direction = $_REQUEST['Direction'];
-//$stmt->execute();*/
+//$stmt->execute();
 $translation = new Traslator_API( rawurlencode(strtolower($body)) );
 ?>
 <Response>
