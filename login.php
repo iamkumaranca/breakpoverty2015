@@ -8,6 +8,14 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
+                        <?php $error = $_GET["error"]; ?>
+                        <?php if($error != '') : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span>
+                            <?php echo $error; ?>
+                        </div>
+                        <?php endif; ?>
                         <form role="form" action="./inc/php/login.php" method="post">
                             <fieldset>
                                 <div class="form-group">

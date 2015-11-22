@@ -14,7 +14,7 @@ while($row = $stmt->fetch()) {
         header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
         die();
     } else {
-        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php");
+        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php?error=Incorrect username or password!");
         die();
     }
 }
