@@ -50,7 +50,7 @@
                     <li>
                         <a href="index.php"><span class="fa fa-dashboard fa-fw"></span> Dashboard</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#"><span class="fa fa-bar-chart-o fa-fw"></span> Charts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -59,11 +59,11 @@
                             <li>
                                 <a href="morris.php">Morris.js Charts</a>
                             </li>
-                        </ul>
+                        </ul> -->
                         <!-- /.nav-second-level -->
-                    </li>
+                    <!-- </li> -->
                     <li>
-                        <a href="registration.php"><i class="fa fa-user fa-fw"></i><i class="fa fa-user-plus"></i><span class="fa fa-user-plus fa-fw"></span> New User Registration</a>
+                        <a href="registration.php"><span class="fa fa-user fa-fw"></span> New User Registration</a>
                     </li>
                 </ul>
             </div>
