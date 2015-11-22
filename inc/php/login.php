@@ -8,7 +8,7 @@ $password = hash('sha512', $_POST["password"]);
 $stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
 $stmt->execute();
 
-$user_count = end($row);
+$user_count = end($stmt);
 
 while($row = $stmt->fetch()) {
     if( $row['username'] == $username && $row['password'] == $password ) :
