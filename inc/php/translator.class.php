@@ -21,6 +21,7 @@ class Traslator_API {
         $responseDecoded = json_decode($response, true);
         $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
+        print_r(json_decode($response, true));
         $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
         if($responseCode != 200) :
             echo 'error';
@@ -28,8 +29,6 @@ class Traslator_API {
             $errorDescription = 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
             return $errorCode . ' ' .  $errorDescription;
         else :
-
-            echo $detectedLanuage;
             if ( $detectedLanuage == 'en' ) :
                 echo 'success en';
                 $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
@@ -68,8 +67,6 @@ class Traslator_API {
                 endif;
             endif;
         endif;
-
-
     }
  }
 
