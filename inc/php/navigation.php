@@ -63,7 +63,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="forms.php"><i class="fa fa-user-plus fa-fw"></i> New User Registration</a>
+                        <a href="registration.php"><i class="fa fa-user-plus fa-fw"></i> New User Registration</a>
                     </li>
                 </ul>
             </div>
