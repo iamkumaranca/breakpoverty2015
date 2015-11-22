@@ -21,10 +21,10 @@ $date_sent = $_REQUEST['date_sent'];
 //$date_sent = date(YY-MM-DD hh:mm:ss);
 $sent_from = $_REQUEST['From'];
 $sent_to = $_REQUEST['To'];
-$status = $_REQUEST['Status'];
-$direction = $_REQUEST['Direction'];
+$status = $_REQUEST['status'];
+$direction = $_REQUEST['direction'];
 //$stmt->execute();
-$translation = new Traslator_API( rawurlencode(strtolower($date_sent)) );
+$translation = new Traslator_API( rawurlencode(strtolower($status)) );
 
 ?>
 <Response>
