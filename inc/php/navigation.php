@@ -48,10 +48,10 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="index.php"><span class="fa fa-dashboard fa-fw"></span> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                        <a href="#"><span class="fa fa-bar-chart-o fa-fw"></span> Charts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="flot.php">Flot Charts</a>
@@ -63,7 +63,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="registration.php"><i class="fa fa-user-plus fa-fw"></i> New User Registration</a>
+                        <a href="registration.php"><span class="fa fa-user-plus"></span> New User Registration</a>
                     </li>
                 </ul>
             </div>
