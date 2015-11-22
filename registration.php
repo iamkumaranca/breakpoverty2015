@@ -58,7 +58,7 @@ if($_SESSION["logged-in"]) :
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label>Role on Site</label>
+                                                <label>Role on Site</label><br />
                                                 <label class="radio-inline">
                                                     <input type="radio" name="site_role" id="site_role1" value="Principle" checked>Principle
                                                 </label>
