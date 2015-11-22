@@ -15,17 +15,17 @@ $stmt->bindParam(':status', $status);
 $stmt->bindParam(':direction', $direction);*/
 
 $body = $_REQUEST['Body'];
-$date_sent = $_RESPONSE['date_sent'];
+$date_sent = $_REQUEST['date_sent'];
 //$old_date = date('D, d M Y H:i:s O');
 //$old_date_timestamp = strtotime($old_date);
 //$date_sent = date(YY-MM-DD hh:mm:ss);
 $sent_from = $_REQUEST['From'];
 $sent_to = $_REQUEST['To'];
-$status = $_RESPONSE['status'];
-$direction = $_RESPONSE['direction'];
+$status = $_REQUEST['status'];
+$direction = $_REQUEST['direction'];
 //$stmt->execute();
-$translation = new Traslator_API( rawurlencode(strtolower($status)) );
-
+//$translation = new Traslator_API( rawurlencode(strtolower($status)) );
+$translation = new Traslator_API( $status );
 ?>
 <Response>
 	<Message><? echo $translation->translateInput(); ?></Message>
