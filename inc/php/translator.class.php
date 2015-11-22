@@ -7,16 +7,10 @@ class Traslator_API {
 
     function __construct( $input ) {
 		$this->input = $input;
-        $this->translateInput();
 	}
 
     static function setOutput( $output ) {
         $this->output = $output;
-    }
-
-    function getOutput() {
-        //echo $this->output;
-        //echo 'hello';
     }
 
     function translateInput() {
