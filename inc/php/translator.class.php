@@ -22,16 +22,13 @@ class Traslator_API {
         $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
         if($responseCode != 200) :
-            echo 'error';
             $error = 'Fetching translation failed! Server response code:' . $responseCode . '<br>';
-            //$error =. 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
+            $error =. 'Error description: ' . $responseDecoded['error']['errors'][0]['message'];
         else :
-            echo 'success';
             $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
         endif;
 
         if ( $detectedLanuage == 'en' ) :
-            echo 'en success';
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -40,9 +37,12 @@ class Traslator_API {
             $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-            return  rawurldecode($this->input) . ' -> ' . $translatedString;
-        elseif ( strlen($detectedLanuage) == 2 ) :
-            echo 'success other';
+            if($responseCode != 200) :
+                return error;
+            else :
+                return  rawurldecode($this->input) . ' -> ' . $translatedString;
+            endif;
+        else:
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=en&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
@@ -51,10 +51,11 @@ class Traslator_API {
             $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
             curl_close($handle);
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-            return  rawurldecode($this->input) . ' -> ' . $translatedString;
-        else :
-            echo 'fail';
-            return $error;
+            if($responseCode != 200) :
+                return error;
+            else :
+                return  rawurldecode($this->input) . ' -> ' . $translatedString;
+            endif;
         endif;
     }
  }
