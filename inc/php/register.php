@@ -22,7 +22,7 @@ if($password == $confirm_password) {
     $stmt->bindParam(':site_role', $site_role);
     $stmt->execute();
 } else {
-    header("Location: http://kumaransathianathan.ca/breakpoverty2015/register.php?error=Password do not match!");
+    header("Location: http://kumaransathianathan.ca/breakpoverty2015/registration.php?error=Password do not match!");
     die();
 }
 ?>
