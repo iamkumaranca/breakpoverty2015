@@ -6,6 +6,9 @@ if($_SESSION["logged-in"]) :
 
     $stmt = $dbh->prepare('SELECT * FROM `sms`;');
     $stmt->execute();
+
+    $stmt2 = $dbh->prepare('SELECT message FROM top_translations_view LIMIT 10;');
+    $stmt2->execute();
 ?>
 
             <div id="page-wrapper">
@@ -55,22 +58,11 @@ if($_SESSION["logged-in"]) :
                             <div class="panel-body">
                                 <div class="list-group">
                                     <a href="#" class="list-group-item">
-
-                                    </a>
-                                    <a href="#" class="list-group-item">
-
-                                    </a>
-                                    <a href="#" class="list-group-item">
-
-                                    </a>
-                                    <a href="#" class="list-group-item">
-
-                                    </a>
-                                    <a href="#" class="list-group-item">
-
-                                    </a>
-                                    <a href="#" class="list-group-item">
-
+                                        <?php
+                                            while($row = $stmt2->fetch()) {
+                                                echo '<p>' . $row['message'] . '</p><br/>'
+                                            }
+                                        ?>
                                     </a>
                                 </div>
                                 <!-- /.list-group -->
