@@ -11,7 +11,7 @@ $stmt->execute();
 while($row = $stmt->fetch()) {
 	// print_r($row)."<br/>"; // recursively print out object.
 
-    if( $row['username'] == $username && hash('sha512', $password);) {
+    if( $row['username'] == $username && hash('sha512', $password)) {
         echo 'Access Granted';
     } else {
         echo 'Access Denied';
