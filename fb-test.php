@@ -1,10 +1,13 @@
 <?php
-require ('./inc/php/firebaseLib.php');
+$base_url = 'https://breakpoverty2015.firebaseio.com/';
 
-const DEFAULT_URL = 'https://breakingpoverty2015.firebaseio.com/';
-const DEFAULT_TOKEN = '98qyOIK3yGRdGfwICYqfMooqf74gwFYGaxMrGUGh';
+$curl = curl_init();
+curl_setopt($curl, CURLOPT_URL, $base_url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, $base_url);
+curl_setopt($curl, CURLOPT_HEADER, $base_url);
 
-$firebase = new Firebase(DEFAULT_URL, DEFAULT_TOKEN);
-$firebase->set(DEFAULT_PATH . '/name/contact001', "John Doe");
-$name = $firebase->get(DEFAULT_PATH . '/name/contact001');
+$output = curl_exec($curl);
+curl_close($curl);
+
+echo $output;
 ?>
