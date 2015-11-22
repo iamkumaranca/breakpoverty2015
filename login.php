@@ -8,9 +8,9 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" action="./inc/php/login.php" method="post">
                             <fieldset>
-                                <div class="form-group" action="./inc/php/login.php" method="post">
+                                <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
