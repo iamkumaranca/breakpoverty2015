@@ -60,7 +60,7 @@ if($_SESSION["logged-in"]) :
                                     <a href="#" class="list-group-item">
                                         <?php
                                             while($row = $stmt2->fetch()) {
-                                                echo '<p>' . $row['message'] . '</p><br/>'
+                                                echo '<p>' . $row['message'] . '</p><br/>';
                                             }
                                         ?>
                                     </a>
