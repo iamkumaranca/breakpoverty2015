@@ -21,7 +21,9 @@ class Traslator_API {
         $responseDecoded = json_decode($response, true);
         $responseCode = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         curl_close($handle);
-        //print_r(json_decode($response, true));
+        echo '<pre>';
+        print_r(json_decode($response, true));
+        echo '<pre>';
         $detectedLanuage = $responseDecoded['data']['translations'][0]['translatedText'];
         echo $detectedLanuage;
         if($responseCode != 200) :
