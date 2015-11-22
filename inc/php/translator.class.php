@@ -25,7 +25,7 @@ class Traslator_API {
         //echo '</pre>';
         $detectedLanuage = $responseDecoded['data']['detections'][0][0]['language'];
 
-        if ( 'en' == $detectedLanuage ) :
+        if ( $detectedLanuage == 'en' ) :
             $url = 'https://www.googleapis.com/language/translate/v2?q=' . $this->input .'&target=sw&key=' . $this->apiKey;
             $handle = curl_init($url);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
