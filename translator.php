@@ -24,7 +24,7 @@ $sent_to = $_REQUEST['To'];
 $status = $_REQUEST['Status'];
 $direction = $_REQUEST['Direction'];
 //$stmt->execute();
-$translation = new Traslator_API( rawurlencode(strtolower($status)) );
+$translation = new Traslator_API( rawurlencode(strtolower($direction)) );
 
 ?>
 <Response>
