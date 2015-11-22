@@ -54,8 +54,9 @@ class Traslator_API {
             //print_r(json_decode($response, true));
             //echo '</pre>';
             $translatedString = $responseDecoded['data']['translations'][0]['translatedText'];
-            echo $translatedString;
+            //echo $translatedString;
         endif;
+        return $translatedString;
     }
 
  }
