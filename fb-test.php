@@ -1,5 +1,5 @@
 <?php
-require_once '<path>/inc/php/firebaseLib.php';
+require ('./inc/php/firebaseLib.php');
 
 const DEFAULT_URL = 'https://kidsplace.firebaseio.com/';
 const DEFAULT_TOKEN = 'MqL0c8tKCtheLSYcygYNtGhU8Z2hULOFs9OKPdEp';
