@@ -9,21 +9,13 @@ $stmt = $dbh->prepare('SELECT `id`, `username`, `password` FROM `user`;');
 $stmt->execute();
 
 while($row = $stmt->fetch()) {
-	// print_r($row)."<br/>"; // recursively print out object.
-
     if( $row['username'] == $username && hash('sha512', $password)) {
-        echo 'Access Granted';
+        $_SESSION["logged-in"] = true;
+        header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
+        die();
     } else {
-        echo 'Access Denied';
+        header("Location: http://kumaransathianathan.ca/breakpoverty2015/login.php");
+        die();
     }
-
-
-
-	// if($username == $row['username'] && $password = $row['password']) {
-	// 	echo("WELCOME TO OUR HIDDEN PAGE!!! You are now loggged in!");
-	// 	//$_SESSION["logged-in"] = true;
-	// } else {
-	// 	echo("Access Denied");
-	// }
 }
 ?>
