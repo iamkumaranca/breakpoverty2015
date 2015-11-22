@@ -5,12 +5,7 @@ session_start();
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-define("MAX_LENGTH", 6);
-
-    $intermediateSalt = md5(uniqid(rand(), true));
-    $salt = substr($intermediateSalt, 0, MAX_LENGTH);
-    echo hash("sha256", '<br/eak>' . $salt);
-    echo '<br/><br/> ' .  $salt;
+echo hash("sha512", '<br/eak>');
 
 $stmt = $dbh->prepare('SELECT `id`, `username`, `password` FROM `user`;');
 $stmt->execute();
