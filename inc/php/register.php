@@ -21,6 +21,8 @@ if($password == $confirm_password) {
     $stmt->bindParam(':mobile_phone', $mobile_phone);
     $stmt->bindParam(':site_role', $site_role);
     $stmt->execute();
+    header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
+    die();
 } else {
     header("Location: http://kumaransathianathan.ca/breakpoverty2015/registration.php?error=Password do not match!");
     die();
