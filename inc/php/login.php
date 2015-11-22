@@ -2,8 +2,8 @@
 require_once('./connect_db.php');
 session_start();
 
-$username = hash('sha512', $_POST["username"]);
-$password = $_POST["password"];
+$username = $_POST["username"];
+$password = hash('sha512', $_POST["password"]);
 
 $stmt = $dbh->prepare('SELECT `username`, `password` FROM `user`;');
 $stmt->execute();
