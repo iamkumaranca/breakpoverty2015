@@ -11,11 +11,11 @@ $stmt->execute();
 $user_count = count($stmt->fetch());
 
 while($row = $stmt->fetch()) {
-    if( $row['username'] == $username && $row['password'] == $password ) :
-        $_SESSION["logged-in"] = true;
-        header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
-        die();
-    endif;
+    // if( $row['username'] == $username && $row['password'] == $password ) :
+    //     $_SESSION["logged-in"] = true;
+    //     header("Location: http://kumaransathianathan.ca/breakpoverty2015/index.php");
+    //     die();
+    // endif;
     echo $user_count;
     $user_count--;
     echo '<br />';
